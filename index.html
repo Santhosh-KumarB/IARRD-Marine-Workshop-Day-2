@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ஆழ்கடலில் ஒரு பயணம் - Day 2</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@700&family=Montserrat:wght@400;700;800&family=Inter:wght@400;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="fade-to-black"></div>
+    <img src="IARRD logo.png" id="global-logo" alt="IARRD Logo">
+
+    <div id="hud-menu-btn" class="menu-toggle" onclick="toggleMenu()">
+        <svg viewBox="0 0 100 100">
+            <line x1="20" y1="30" x2="80" y2="30" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+            <line x1="20" y1="50" x2="80" y2="50" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+            <line x1="20" y1="70" x2="60" y2="70" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+        </svg>
+    </div>
+
+    <div id="timeline-panel" class="timeline-menu">
+        <div class="menu-header">DAY 2 ARCHIVE</div>
+        <ul class="timeline-list">
+            <li onclick="jumpToTimeline('waiting-phase', 'INIT')">01. INITIATION (WAITING)</li>
+            <li onclick="jumpToTimeline('landing-phase', 'INIT_LANDING')">02. THE TEMPLE GATES</li>
+            <li onclick="jumpToTimeline('map-phase', 'ON_MAP')">03. MISSION MAP</li>
+            <li onclick="jumpToTimeline('comm-page', 'NODE_COMM_START')">04. NODE 3: COMM SYSTEM</li>
+            <li onclick="jumpToTimeline('comm-page', 'NODE_COMM_MATRIX')">05. ACOUSTIC FLOWCHART</li>
+            <li onclick="jumpToTimeline('challenges-page', 'CHALLENGES')">06. COMMUNICATION CHALLENGES</li>
+            <li onclick="jumpToTimeline('optical-page', 'OPTICAL_START')">07. OPTICAL COMMUNICATION</li>
+            <li onclick="jumpToTimeline('rfc-page', 'RFC_START')">08. RADIO FREQUENCY</li>
+            <li onclick="jumpToTimeline('titanic-page', 'TITANIC_START')">09. TITANIC CASE STUDY</li>
+            <li onclick="jumpToTimeline('future-comm-page', 'FUTURE_COMM_START')">10. FUTURE COMMUNICATION</li>
+            <li onclick="jumpToTimeline('sensor-page', 'NODE_SENSOR_START')">11. NODE 4: SENSOR SYSTEMS</li>
+            <li onclick="jumpToTimeline('control-intro-page', 'NODE_POWER_START')">12. NODE 5: CONTROL INTRO</li>
+            <li onclick="jumpToTimeline('power-intro-page', 'NODE_POWER_ENERGY')">13. NODE 5: POWER SYSTEMS</li>
+            <li onclick="jumpToTimeline('mariana-trench-page', 'NODE_CASE_STUDY_START')">14. NODE 6: MARIANA TRENCH</li>
+        </ul>
+    </div>
+
+    <section id="waiting-phase" class="fullscreen-section active">
+        <video id="waiting-video" autoplay loop muted playsinline>
+            <source src="Waiting_page-2.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <section id="landing-phase" class="fullscreen-section">
+        <video id="landing-video" muted playsinline>
+            <source src="Landing_page-2.mp4" type="video/mp4">
+        </video>
+        <div class="vignette-overlay"></div>
+        <div id="bubble-container" class="bubble-layer"></div>
+        <div id="landing-titles" class="cinematic-titles">
+            <h1 class="main-title water-text">ஆழ்கடலில் ஒரு பயணம்</h1>
+            <h2 class="sub-title water-text-sub">Exploring the Unknown Depths</h2>
+            <h3 class="day-title">Day-2</h3>
+            <button id="begin-btn" class="glow-btn">BEGIN</button>
+        </div>
+    </section>
+
+    <section id="map-phase" class="fullscreen-section">
+        <div id="map-background"></div>
+
+        <div class="map-node" id="node-start">
+            <div class="master-hud-wrapper hud-green">
+                <div class="hud-ring dashed spin-cw"></div>
+                <div class="hud-center"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z M4 22v-7" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+            </div>
+            <div class="node-text" style="text-align: left;"><span>MISSION START</span></div>
+        </div>
+        
+        <div class="map-node" id="node-uv" onclick="launchPlaceholder('Underwater Vehicles')">
+            <div class="node-text" style="text-align: right;">NODE 1<br><span>UNDERWATER VEHICLES</span></div>
+            <div class="master-hud-wrapper hud-cyan">
+                <div class="hud-ring solid spin-ccw"></div><div class="hud-ring dashed spin-cw fast"></div>
+                <div class="hud-center"><svg viewBox="0 0 100 100" class="anim-bob"><path d="M20,50 Q20,30 50,30 L80,30 Q90,30 90,50 Q90,70 80,70 L50,70 Q20,70 20,50 Z" stroke="currentColor" stroke-width="4" fill="rgba(0,229,255,0.2)"/><circle cx="75" cy="50" r="5" fill="currentColor"/><rect x="40" y="15" width="20" height="15" stroke="currentColor" stroke-width="3" fill="none"/></svg></div>
+            </div>
+        </div>
+        <div class="map-node" id="node-nav" onclick="launchPlaceholder('Navigation Systems')">
+            <div class="master-hud-wrapper hud-blue">
+                <div class="hud-radar-sweep"></div><div class="hud-ring dashed spin-cw"></div>
+                <div class="hud-center"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="1" fill="none"/><circle cx="50" cy="50" r="20" stroke="currentColor" stroke-width="1" fill="none"/><path d="M50,10 L50,90 M10,50 L90,50" stroke="currentColor" stroke-width="1" opacity="0.5"/></svg></div>
+            </div>
+            <div class="node-text" style="text-align: left;">NODE 2<br><span>NAVIGATION SYSTEMS</span></div>
+        </div>
+        <div class="map-node" id="node-comm" onclick="launchCommNode()">
+            <div class="node-text" style="text-align: right;">NODE 3<br><span>COMMUNICATION SYSTEMS</span></div>
+            <div class="master-hud-wrapper hud-cyan">
+                <div class="hud-ring double spin-ccw"></div>
+                <div class="hud-center"><svg viewBox="0 0 100 100"><circle cx="50" cy="70" r="6" fill="currentColor"/><path d="M30,50 Q50,20 70,50" stroke="currentColor" stroke-width="4" fill="none" class="anim-pulse-1"/><path d="M15,35 Q50,-5 85,35" stroke="currentColor" stroke-width="4" fill="none" class="anim-pulse-2"/></svg></div>
+            </div>
+        </div>
+        <div class="map-node" id="node-sensor" onclick="launchSensorNode()">
+            <div class="master-hud-wrapper hud-red">
+                <div class="hud-ring dashed spin-cw fast"></div><div class="hud-scanline"></div>
+                <div class="hud-center"><svg viewBox="0 0 100 100"><path d="M10,50 Q50,10 90,50 Q50,90 10,50 Z" stroke="currentColor" stroke-width="4" fill="rgba(255,68,0,0.1)"/><circle cx="50" cy="50" r="15" fill="currentColor" class="anim-scale"/></svg></div>
+            </div>
+            <div class="node-text" style="text-align: left;">NODE 4<br><span>SENSOR SYSTEMS</span></div>
+        </div>
+        <div class="map-node" id="node-power" onclick="launchPowerNode()">
+            <div class="node-text" style="text-align: right;">NODE 5<br><span>POWER & CONTROL SYSTEMS</span></div>
+            <div class="master-hud-wrapper hud-cyan">
+                <div class="hud-ring solid spin-ccw slow"></div>
+                <div class="hud-center"><svg viewBox="0 0 100 100"><rect x="30" y="25" width="40" height="50" rx="4" stroke="currentColor" stroke-width="4" fill="none"/><path d="M40,25 L40,15 M60,25 L60,15 M40,75 L40,85 M60,75 L60,85 M30,40 L20,40 M30,60 L20,60 M70,40 L80,40 M70,60 L80,60" stroke="currentColor" stroke-width="3"/><path d="M40,50 L50,35 L50,50 L60,50 L50,65 L50,50 Z" fill="currentColor" class="anim-pulse-1"/></svg></div>
+            </div>
+        </div>
+        <div class="map-node" id="node-case" onclick="launchCaseStudyNode()">
+            <div class="master-hud-wrapper hud-orange">
+                <div class="hud-ring dashed spin-cw fast"></div><div class="hud-ring double spin-ccw"></div>
+                <div class="hud-center"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="10" fill="currentColor" class="anim-pulse-red"/><path d="M50,0 L50,20 M50,100 L50,80 M0,50 L20,50 M100,50 L80,50" stroke="currentColor" stroke-width="4"/></svg></div>
+            </div>
+            <div class="node-text" style="text-align: left;">NODE 6<br><span>MARIANA TRENCH CASE STUDY</span></div>
+        </div>
+    </section>
+
+    <section id="comm-page" class="fullscreen-section">
+        <video id="vid-comm-intro" class="bg-video" muted playsinline><source src="communication_intro.mp4" type="video/mp4"></video>
+        <h1 id="comm-title-1" class="phase-title dead-center text-cyan single-line">COMMUNICATION SYSTEMS</h1>
+        <h1 id="comm-title-2" class="phase-title dead-center water-text hide single-line" style="font-family: var(--font-poseidon);">ACOUSTIC COMMUNICATION</h1>
+        <div id="comm-matrix" class="matrix-container hide">
+            <div class="matrix-row">
+                <div class="video-node" onclick="togglePlay(this, 'vid-ac1')"><video id="vid-ac1" src="acoustic_1.mp4" muted loop playsinline></video><div class="play-overlay">▶</div><p>STEP 1: PREP</p></div>
+                <div class="matrix-arrow">➔</div>
+                <div class="video-node" onclick="togglePlay(this, 'vid-ac2')"><video id="vid-ac2" src="acoustic_2.mp4" muted loop playsinline></video><div class="play-overlay">▶</div><p>STEP 2: EMIT</p></div>
+                <div class="matrix-arrow">➔</div>
+                <div class="video-node" onclick="togglePlay(this, 'vid-ac3')"><video id="vid-ac3" src="acoustic_3.mp4" muted loop playsinline></video><div class="play-overlay">▶</div><p>STEP 3: PROPAGATE</p></div>
+            </div>
+            <div class="matrix-curve-arrow"><svg viewBox="0 0 200 50"><path d="M 180,0 Q 180,25 100,25 T 20,50" fill="none" stroke="#00ffcc" stroke-width="5" stroke-dasharray="12,6" class="anim-flow"/></svg></div>
+            <div class="matrix-row bottom-row">
+                <div class="video-node" onclick="togglePlay(this, 'vid-ac4')"><video id="vid-ac4" src="acoustic_4.mp4" muted loop playsinline></video><div class="play-overlay">▶</div><p>STEP 4: RECEIVE</p></div>
+                <div class="matrix-arrow">➔</div>
+                <div class="video-node" onclick="togglePlay(this, 'vid-ac5')"><video id="vid-ac5" src="acoustic_5.mp4" muted loop playsinline></video><div class="play-overlay">▶</div><p>STEP 5: DECODE</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="challenges-page" class="fullscreen-section">
+        <h1 class="text-cyan fixed-top-left" style="font-family: var(--font-poseidon);">CHALLENGES</h1>
+        <div class="matrix-container centered-matrix">
+            <div class="matrix-row four-col">
+                <div class="video-node clean-node" onclick="togglePlay(this, 'vid-noise')"><video id="vid-noise" src="noise.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+                <div class="video-node clean-node" onclick="togglePlay(this, 'vid-delay')"><video id="vid-delay" src="delay.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+                <div class="video-node clean-node" onclick="togglePlay(this, 'vid-multipath')"><video id="vid-multipath" src="Multipath Effect.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+                <div class="video-node clean-node" onclick="togglePlay(this, 'vid-signal')"><video id="vid-signal" src="Signal Loss.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="optical-page" class="fullscreen-section">
+        <div class="deep-sea-bg"></div>
+        <h1 id="opt-title" class="phase-title dead-center water-text hide single-line" style="font-family: var(--font-poseidon);">OPTICAL COMMUNICATION</h1>
+        <div id="opt-matrix" class="matrix-container hide">
+            <div class="matrix-row">
+                <div class="video-node" onclick="togglePlay(this, 'vid-op1')"><video id="vid-op1" src="optical_1.mp4" muted loop playsinline></video><div class="play-overlay">▶</div><p>STEP 1: PREP</p></div>
+                <div class="matrix-arrow">➔</div>
+                <div class="video-node" onclick="togglePlay(this, 'vid-op2')"><video id="vid-op2" src="optical_2.mp4" muted loop playsinline></video><div class="play-overlay">▶</div><p>STEP 2: EMIT</p></div>
+                <div class="matrix-arrow">➔</div>
+                <div class="video-node" onclick="togglePlay(this, 'vid-op3')"><video id="vid-op3" src="optical_3.mp4" muted loop playsinline></video><div class="play-overlay">▶</div><p>STEP 3: PROPAGATE</p></div>
+            </div>
+            <div class="matrix-curve-arrow"><svg viewBox="0 0 200 50"><path d="M 180,0 Q 180,25 100,25 T 20,50" fill="none" stroke="#00ffcc" stroke-width="5" stroke-dasharray="12,6" class="anim-flow"/></svg></div>
+            <div class="matrix-row bottom-row">
+                <div class="video-node" onclick="togglePlay(this, 'vid-op4')"><video id="vid-op4" src="optical_4.mp4" muted loop playsinline></video><div class="play-overlay">▶</div><p>STEP 4: RECEIVE</p></div>
+                <div class="matrix-arrow">➔</div>
+                <div class="video-node" onclick="togglePlay(this, 'vid-op5')"><video id="vid-op5" src="optical_5.mp4" muted loop playsinline></video><div class="play-overlay">▶</div><p>STEP 5: DECODE</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rfc-page" class="fullscreen-section">
+        <video id="vid-rfc" class="bg-video" muted playsinline><source src="RFC.mp4" type="video/mp4"></video>
+        <h1 id="rfc-title" class="phase-title fixed-top-center text-cyan hide single-line" style="font-family: var(--font-poseidon);">RADIO FREQUENCY COMMUNICATION</h1>
+    </section>
+
+    <section id="titanic-page" class="fullscreen-section">
+        <div class="deep-sea-bg"></div>
+        <div id="news-container">
+            <img src="titanic_1.jpg" class="news-clipping" style="top: 2%; left: 3%; width: 18vw; z-index: 1;">
+            <img src="titanic_2.jpg" class="news-clipping" style="top: 8%; left: 28%; width: 16vw; z-index: 2;">
+            <img src="titanic_3.jpg" class="news-clipping" style="top: 5%; right: 28%; width: 15vw; z-index: 3;">
+            <img src="titanic_4.jfif" class="news-clipping" style="top: 10%; right: 4%; width: 18vw; z-index: 4;">
+            <img src="titanic_5.jpg" class="news-clipping" style="top: 38%; left: 2%; width: 20vw; z-index: 5;">
+            <img src="titanic_6.jfif" class="news-clipping" style="top: 35%; right: 2%; width: 17vw; z-index: 6;">
+            <img src="titanic_7.jfif" class="news-clipping" style="bottom: 5%; left: 8%; width: 19vw; z-index: 7;">
+            <img src="titanic_8.jfif" class="news-clipping" style="bottom: 8%; left: 33%; width: 15vw; z-index: 8;">
+            <img src="titanic_9.jfif" class="news-clipping" style="bottom: 3%; right: 30%; width: 16vw; z-index: 9;">
+            <img src="titanic_10.jfif" class="news-clipping" style="bottom: 8%; right: 8%; width: 22vw; z-index: 10;">
+        </div>
+        <div id="titanic-video-container" class="hide medium-video-container">
+            <video id="vid-titanic" class="medium-video" muted playsinline loop><source src="titanic.mp4" type="video/mp4"></video>
+            <div id="titanic-titles" class="text-center">
+                <h1 class="text-cyan single-line" style="font-family: var(--font-poseidon); font-size: 3.5rem; margin-bottom: 5px;">CASE STUDY: R.M.S. TITANIC</h1>
+                <h2 style="font-family: var(--font-montserrat); color: #00ffcc; letter-spacing: 6px; font-weight: 300; font-size: 1.5rem;">THE COST OF COMMUNICATION FAILURE</h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="future-comm-page" class="fullscreen-section">
+        <div class="deep-sea-bg"></div>
+        <div id="future-video-container" class="hide medium-video-container">
+            <video id="vid-future" class="medium-video" muted playsinline loop><source src="future_comm.mp4" type="video/mp4"></video>
+            <div id="future-titles" class="text-center">
+                <h1 class="text-cyan single-line" style="font-family: var(--font-poseidon); font-size: 3.5rem; margin-bottom: 5px;">FUTURE COMMUNICATION</h1>
+                <h2 style="font-family: var(--font-montserrat); color: #00ffcc; letter-spacing: 6px; font-weight: 300; font-size: 1.5rem;">SWARM NETWORKS & AI INTEGRATION</h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="sensor-page" class="fullscreen-section">
+        <div id="sensor-stage-0" class="sensor-stage active">
+            <video id="vid-sensor-intro" class="bg-video" muted playsinline><source src="sensor intro.mp4" type="video/mp4"></video>
+            <h1 id="title-sensor-intro" class="phase-title fixed-top-center text-cyan hide single-line" style="font-family: var(--font-poseidon); font-size: 4.5rem;">SENSOR SYSTEMS</h1>
+        </div>
+        <div id="sensor-stage-1" class="sensor-stage hide">
+            <video class="bg-video" muted playsinline loop><source src="camera_sen.mp4" type="video/mp4"></video>
+            <h1 class="phase-title fixed-top-right text-cyan show single-line" style="font-family: var(--font-poseidon); font-size: 3.5rem;">CAMERA SENSOR</h1>
+        </div>
+        <div id="sensor-stage-2" class="sensor-stage hide">
+            <video class="bg-video" muted playsinline loop><source src="sonar_sen.mp4" type="video/mp4"></video>
+            <h1 class="phase-title fixed-top-left text-cyan show single-line" style="font-family: var(--font-poseidon); font-size: 3.5rem;">SONAR SENSOR</h1>
+        </div>
+        <div id="sensor-stage-3" class="sensor-stage hide">
+            <video class="bg-video" muted playsinline loop><source src="Pressure_sen.mp4" type="video/mp4"></video>
+            <h1 class="phase-title fixed-top-right text-cyan show single-line" style="font-family: var(--font-poseidon); font-size: 3.5rem;">PRESSURE SENSOR</h1>
+        </div>
+        <div id="sensor-stage-4" class="sensor-stage hide">
+            <video class="bg-video" muted playsinline loop><source src="Temperature_sen.mp4" type="video/mp4"></video>
+            <h1 class="phase-title fixed-bottom-center text-cyan show single-line" style="font-family: var(--font-poseidon); font-size: 3.5rem;">TEMPERATURE SENSOR</h1>
+        </div>
+        <div id="sensor-stage-5" class="sensor-stage hide">
+            <video class="bg-video" muted playsinline loop><source src="imu_sen.mp4" type="video/mp4"></video>
+            <h1 class="phase-title fixed-bottom-right text-cyan show single-line" style="font-family: var(--font-poseidon); font-size: 3.5rem;">IMU SENSOR</h1>
+        </div>
+        <div id="sensor-stage-6" class="sensor-stage hide">
+            <video class="bg-video" muted playsinline loop><source src="dvl_sen.mp4" type="video/mp4"></video>
+            <h1 class="phase-title fixed-top-right text-cyan show single-line" style="font-family: var(--font-poseidon); font-size: 3.5rem;">DVL SENSOR</h1>
+        </div>
+        <div id="sensor-stage-7" class="sensor-stage hide">
+            <video class="bg-video" muted playsinline loop><source src="sensor_fusion_sen.mp4" type="video/mp4"></video>
+            <h1 class="phase-title fixed-bottom-center text-cyan show single-line" style="font-family: var(--font-poseidon); font-size: 3.5rem;">SENSOR FUSION</h1>
+        </div>
+    </section>
+
+    <section id="control-intro-page" class="fullscreen-section">
+        <video id="vid-control-intro" class="bg-video" muted playsinline>
+            <source src="control_intro.mp4" type="video/mp4">
+        </video>
+        <h1 id="control-title" class="phase-title fixed-top-center text-cyan hide single-line" style="font-family: var(--font-poseidon);">CONTROL SYSTEM</h1>
+    </section>
+
+    <section id="feedback-page" class="fullscreen-section">
+        <div class="deep-sea-bg"></div>
+        <div class="flex-col-container">
+            <div class="flex-row-block">
+                <h1 class="text-cyan single-line" style="font-family: var(--font-poseidon); font-size: 3.5rem; margin-bottom: 20px;">FEEDBACK</h1>
+                <div class="matrix-row" style="gap: 40px;">
+                    <div class="video-node clean-node" onclick="togglePlay(this, 'vid-fb1')"><video id="vid-fb1" src="feedback-1.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+                    <div class="video-node clean-node" onclick="togglePlay(this, 'vid-fb2')"><video id="vid-fb2" src="feedback-2.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+                </div>
+            </div>
+            <div id="feedback-row-2" class="flex-row-block hide" style="margin-top: 50px;">
+                <h1 class="text-cyan single-line" style="font-family: var(--font-poseidon); font-size: 3.5rem; margin-bottom: 20px;">FEEDBACK LOOP</h1>
+                <div class="matrix-row" style="gap: 40px;">
+                    <div class="video-node clean-node" onclick="togglePlay(this, 'vid-open-loop')"><video id="vid-open-loop" src="Open_loop.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+                    <div class="video-node clean-node" onclick="togglePlay(this, 'vid-closed-loop')"><video id="vid-closed-loop" src="Closed_loop.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pid-page" class="fullscreen-section">
+        <div class="deep-sea-bg"></div>
+        <div class="flex-col-container">
+            <h1 class="text-cyan single-line" style="font-family: var(--font-poseidon); font-size: 3.5rem; margin-bottom: 20px;">PID CONTROLLER</h1>
+            <div class="matrix-row" style="gap: 20px;">
+                <div class="video-node clean-node" onclick="togglePlay(this, 'vid-p')"><video id="vid-p" src="P.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+                <div class="video-node clean-node" onclick="togglePlay(this, 'vid-i')"><video id="vid-i" src="I.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+                <div class="video-node clean-node" onclick="togglePlay(this, 'vid-d')"><video id="vid-d" src="D.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+            </div>
+            <div id="pid-row-2" class="matrix-row hide" style="margin-top: 40px;">
+                <div class="video-node clean-node" style="width: 35vw; height: 19.6vw;" onclick="togglePlay(this, 'vid-pid-unified')">
+                    <video id="vid-pid-unified" src="PID.mp4" muted loop playsinline></video><div class="play-overlay">▶</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="power-intro-page" class="fullscreen-section">
+        <video id="vid-power-intro" class="bg-video" muted playsinline>
+            <source src="power_intro.mp4" type="video/mp4">
+        </video>
+        <h1 id="power-title" class="phase-title fixed-top-center text-cyan hide single-line" style="font-family: var(--font-poseidon);">POWER SYSTEM</h1>
+    </section>
+
+    <section id="energy-sources-page" class="fullscreen-section">
+        <div class="deep-sea-bg"></div>
+        <h1 class="fixed-top-center text-cyan single-line" style="font-family: var(--font-poseidon); margin-top: 5%;">ENERGY SOURCES</h1>
+        <div class="matrix-container centered-matrix" style="top: 30%;">
+            <div class="matrix-row four-col">
+                <div class="video-node clean-node" onclick="togglePlay(this, 'vid-lead')"><video id="vid-lead" src="Lead_acid_battery.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+                <div class="video-node clean-node" onclick="togglePlay(this, 'vid-li-ion')"><video id="vid-li-ion" src="Lithium-Ion_battery.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+                <div class="video-node clean-node" onclick="togglePlay(this, 'vid-li-po')"><video id="vid-li-po" src="Lithium_Polymer_battery.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+                <div class="video-node clean-node" onclick="togglePlay(this, 'vid-silver')"><video id="vid-silver" src="Silver-Zinc_battery.mp4" muted loop playsinline></video><div class="play-overlay">▶</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fuel-cell-page" class="fullscreen-section">
+        <video id="vid-fuel-cell" class="bg-video" muted playsinline loop>
+            <source src="Fuel_cell.mp4" type="video/mp4">
+        </video>
+        <h1 class="fixed-top-left text-cyan single-line" style="font-family: var(--font-poseidon);">FUEL CELL</h1>
+    </section>
+
+    <section id="nuclear-page" class="fullscreen-section">
+        <video id="vid-nuclear" class="bg-video" muted playsinline loop>
+            <source src="Nuclear_reactor.mp4" type="video/mp4">
+        </video>
+        <h1 class="fixed-bottom-center text-cyan single-line" style="font-family: var(--font-poseidon);">NUCLEAR POWER</h1>
+    </section>
+
+    <section id="mariana-trench-page" class="fullscreen-section">
+        <h1 class="phase-title fixed-top-center text-cyan show single-line" style="font-family: var(--font-poseidon); font-size: 4.5rem; z-index: 50;">MARIANA TRENCH</h1>
+        <video id="vid-mt-main" class="bg-video" muted playsinline></video>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
